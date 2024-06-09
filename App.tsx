@@ -1,7 +1,8 @@
+import '~/i18n.ts'
 import React, {useEffect} from 'react'
 import {Button, SafeAreaView, Text} from 'react-native'
-import useCommonStore from './src/store/common.ts'
 import {useTranslation} from 'react-i18next'
+import useCommonStore from './src/store/common.ts'
 
 function App(): React.JSX.Element {
   const {lng, setLanguage} = useCommonStore()
