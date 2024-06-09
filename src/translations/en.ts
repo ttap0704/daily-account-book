@@ -1,7 +1,7 @@
-import {TranslationType} from './types.ts'
+import {TranslationType} from './types.ts';
 
 const EN_RESOURCE: TranslationType = {
   intro: 'Hello',
-}
+};
 
-export default EN_RESOURCE
+export default EN_RESOURCE;
