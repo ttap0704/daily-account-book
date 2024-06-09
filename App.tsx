@@ -1,9 +1,15 @@
 import 'intl-pluralrules';
 import 'utils/i18n.ts';
 import React, {useEffect} from 'react';
-import {Button, SafeAreaView, Text} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import useCommonStore from 'store/common.ts';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {SCREENS} from 'core/screens.ts';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+
+const Stack = createNativeStackNavigator();
 
 function App(): React.JSX.Element {
   const {lng, setLanguage} = useCommonStore();
@@ -16,10 +22,13 @@ function App(): React.JSX.Element {
   }, [lng]);
 
   return (
-    <SafeAreaView>
-      <Text>{i18n.t('intro')}</Text>
-      <Button onPress={() => setLanguage('en')} title="눌러보시오" />
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen {...SCREENS.HOME}></Stack.Screen>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 
