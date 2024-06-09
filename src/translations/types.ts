@@ -1,3 +1,3 @@
 export type TranslationType = {
-  intro: string
-}
+  intro: string;
+};
