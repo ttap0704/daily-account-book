@@ -2,7 +2,7 @@ import {SafeAreaView, Text, View} from 'react-native';
 import LayoutDefault from 'components/layouts/LayoutDefault.tsx';
 import {RootStackScreenProps} from 'types/navigation.ts';
 
-function Home({navigation}: RootStackScreenProps<'HOME'>) {
+function Settings({navigation}: RootStackScreenProps<'SETTINGS'>) {
   return (
     <LayoutDefault navigation={navigation}>
       <Text>4353451</Text>
@@ -10,4 +10,4 @@ function Home({navigation}: RootStackScreenProps<'HOME'>) {
   );
 }
 
-export default Home;
+export default Settings;

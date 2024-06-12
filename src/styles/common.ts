@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 export const commonStyles = StyleSheet.create({
+  // flex
   flex: {
     display: 'flex',
   },
@@ -17,5 +18,14 @@ export const commonStyles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+
+  // custom
+  viewArea: {
+    width: '100%',
+    maxWidth: 1000,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    paddingHorizontal: 20,
   },
 });
