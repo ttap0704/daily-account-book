@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/GangwonOcsam.ttf",
+      "sha1": "260e8dec5e9ead00620c3bcbe6832978a31f5975"
+    },
+    {
+      "path": "src/assets/fonts/GangwonSaeum.ttf",
+      "sha1": "d142b81c4f416632a4e49719a5b289c63f5f5b2f"
+    },
+    {
+      "path": "src/assets/fonts/Ownglyph_meetme-Rg.ttf",
+      "sha1": "ec1277656eae863df33384ad5bc141e8ddf61607"
+    }
+  ]
+}
