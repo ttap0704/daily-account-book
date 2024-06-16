@@ -20,6 +20,12 @@ export const commonStyles = StyleSheet.create({
     justifyContent: 'center',
   },
 
+  // typography
+  typography: {
+    fontFamily: 'Ownglyph_meetme-Rg',
+    fontSize: 24,
+  },
+
   // custom
   viewArea: {
     width: '100%',

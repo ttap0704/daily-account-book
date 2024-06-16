@@ -12,6 +12,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		4783B4E22C1F191900C3EA5D /* Ownglyph_meetme-Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4783B4E12C1F191900C3EA5D /* Ownglyph_meetme-Rg.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-DailyAccountBook-DailyAccountBookTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-DailyAccountBook-DailyAccountBookTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		D033323BF314C02C1E751CA9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 60889C8F80AAF3D48C2A4601 /* PrivacyInfo.xcprivacy */; };
@@ -59,12 +60,16 @@
 		4783B4C32C19D9C200C3EA5D /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		4783B4C42C19D9C200C3EA5D /* FontAwesome6_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome6_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome6_Solid.ttf"; sourceTree = "<group>"; };
 		4783B4C52C19D9C200C3EA5D /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		4783B4E12C1F191900C3EA5D /* Ownglyph_meetme-Rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Ownglyph_meetme-Rg.ttf"; path = "../../../../Downloads/Ownglyph_meetme-Rg.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-DailyAccountBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyAccountBook.release.xcconfig"; path = "Target Support Files/Pods-DailyAccountBook/Pods-DailyAccountBook.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-DailyAccountBook-DailyAccountBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyAccountBook-DailyAccountBookTests.debug.xcconfig"; path = "Target Support Files/Pods-DailyAccountBook-DailyAccountBookTests/Pods-DailyAccountBook-DailyAccountBookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-DailyAccountBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DailyAccountBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60889C8F80AAF3D48C2A4601 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = DailyAccountBook/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DailyAccountBook/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-DailyAccountBook-DailyAccountBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyAccountBook-DailyAccountBookTests.release.xcconfig"; path = "Target Support Files/Pods-DailyAccountBook-DailyAccountBookTests/Pods-DailyAccountBook-DailyAccountBookTests.release.xcconfig"; sourceTree = "<group>"; };
+		A5DB3674F7D1453C8DDF810C /* GangwonOcsam.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GangwonOcsam.ttf; path = ../src/assets/fonts/GangwonOcsam.ttf; sourceTree = "<group>"; };
+		AEF420EB788640AE93805765 /* GangwonSaeum.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GangwonSaeum.ttf; path = ../src/assets/fonts/GangwonSaeum.ttf; sourceTree = "<group>"; };
+		D3A8A6C91DF547C798329AAC /* Ownglyph_meetme-Rg.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Ownglyph_meetme-Rg.ttf"; path = "../src/assets/fonts/Ownglyph_meetme-Rg.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -148,6 +153,7 @@
 				4783B4BB2C19D9C200C3EA5D /* Fontisto.ttf */,
 				4783B4BA2C19D9C200C3EA5D /* Foundation.ttf */,
 				4783B4B62C19D9C200C3EA5D /* Ionicons.ttf */,
+				4783B4E12C1F191900C3EA5D /* Ownglyph_meetme-Rg.ttf */,
 				4783B4B32C19D9C200C3EA5D /* MaterialCommunityIcons.ttf */,
 				4783B4BF2C19D9C200C3EA5D /* MaterialIcons.ttf */,
 				4783B4C52C19D9C200C3EA5D /* Octicons.ttf */,
@@ -173,6 +179,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				F6C7013DD0D2469A96682787 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +204,16 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-DailyAccountBook-DailyAccountBookTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F6C7013DD0D2469A96682787 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5DB3674F7D1453C8DDF810C /* GangwonOcsam.ttf */,
+				AEF420EB788640AE93805765 /* GangwonSaeum.ttf */,
+				D3A8A6C91DF547C798329AAC /* Ownglyph_meetme-Rg.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4783B4E22C1F191900C3EA5D /* Ownglyph_meetme-Rg.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				D033323BF314C02C1E751CA9 /* PrivacyInfo.xcprivacy in Resources */,
