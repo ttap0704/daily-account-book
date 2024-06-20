@@ -6,25 +6,27 @@ import Typography from 'components/common/Typography.tsx';
 import Swiper from 'react-native-swiper';
 
 interface CalendarData {
-  [key: string]: number[][];
+  date: string;
+  items: number[][];
 }
 
 function Calendar() {
   const [currentDate, setCurrentDate] = useState(dayjs());
-  const [calendar, setCalendar] = useState<CalendarData>({});
+  const [calendar, setCalendar] = useState<CalendarData[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(2);
 
   useEffect(() => {
     setCalendarData();
-  }, [currentDate]);
+  }, []);
 
   function setCalendarData() {
-    const tmpCalendarData: CalendarData = {...calendar};
-    for (let i = -2; i <= 2; i++) {
+    const tmpCalendarData: CalendarData[] = [...calendar];
+    for (let i = -50; i <= 50; i++) {
       const current = dayjs().month(currentDate.month() + i);
       const curYear = current.year();
-      const curMonth = current.month();
+      const curMonth = current.month() + 1;
 
-      if (!calendar[`${curYear}-${curMonth}`]) {
+      if (!calendar.find(data => data.date === `${curYear}-${curMonth}`)) {
         const lastDate = current.endOf('month').date();
 
         let date = 1;
@@ -37,11 +39,21 @@ function Calendar() {
           date++;
           if (day === 6) week++;
         }
-        tmpCalendarData[`${curYear}-${curMonth}`] = tmpData;
+        tmpCalendarData.push({date: `${curYear}-${curMonth}`, items: tmpData});
       }
     }
 
     setCalendar(tmpCalendarData);
+  }
+
+  function handleCalendarIndex(index: number) {
+    if (currentIndex < index) {
+      setCurrentDate(currentDate.add(+1, 'month'));
+    } else {
+      setCurrentDate(currentDate.add(-1, 'month'));
+    }
+
+    console.log({index});
   }
 
   return (
@@ -50,12 +62,24 @@ function Calendar() {
         <Typography>
           {currentDate.year()}년 {currentDate.month() + 1}월
         </Typography>
-        <Swiper style={calendarStyles.calendarContentsContainer} horizontal={false}>
-          <View>
-            <Text>123</Text>
-          </View>
-        </Swiper>
       </View>
+      {!!calendar.length && (
+        <Swiper
+          style={calendarStyles.calendarContentsContainer}
+          index={50}
+          showsPagination={false}
+          horizontal={false}
+          onIndexChanged={handleCalendarIndex}
+          loop={false}>
+          {calendar.map(({date, items}) => {
+            return (
+              <View style={calendarStyles.calendarContents} key={`calendar-content-${date}`}>
+                <Text>{date}</Text>
+              </View>
+            );
+          })}
+        </Swiper>
+      )}
     </View>
   );
 }
