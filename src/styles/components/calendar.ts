@@ -9,7 +9,7 @@ export const calendarStyles = StyleSheet.create({
     ...commonStyles.viewArea,
     flexDirection: 'column',
     width: '100%',
-    height: 'auto',
+    height: '100%',
   },
   calendarHeaderContainer: {
     ...commonStyles.flex,
@@ -24,5 +24,10 @@ export const calendarStyles = StyleSheet.create({
   },
   calendarContentsContainer: {
     backgroundColor: 'gold',
+    width: '100%',
+  },
+  calendarContents: {
+    backgroundColor: 'gold',
+    flex: 1,
   },
 });
