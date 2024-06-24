@@ -1,27 +1,25 @@
-import {Text, TouchableOpacity, View} from 'react-native';
+import {View} from 'react-native';
 import {calendarStyles} from 'styles/components/calendar.ts';
 import {useEffect, useState} from 'react';
 import dayjs from 'dayjs';
 import Typography from 'components/common/Typography.tsx';
-import Swiper from 'react-native-swiper';
-
-interface CalendarData {
-  date: string;
-  items: number[][];
-}
+import {CalendarData} from 'types/calendar.ts';
+import CalendarContents from 'components/calendar/CalendarContents.tsx';
+import CalendarWeek from 'components/calendar/CalendarWeek.tsx';
 
 function Calendar() {
   const [currentDate, setCurrentDate] = useState(dayjs());
   const [calendar, setCalendar] = useState<CalendarData[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(2);
 
   useEffect(() => {
     setCalendarData();
   }, []);
 
   function setCalendarData() {
-    const tmpCalendarData: CalendarData[] = [...calendar];
-    for (let i = -50; i <= 50; i++) {
+    const calendarPrevData: CalendarData[] = [];
+    const calendarNextData: CalendarData[] = [];
+
+    for (let i = -240; i <= 240; i++) {
       const current = dayjs().month(currentDate.month() + i);
       const curYear = current.year();
       const curMonth = current.month() + 1;
@@ -39,21 +37,21 @@ function Calendar() {
           date++;
           if (day === 6) week++;
         }
-        tmpCalendarData.push({date: `${curYear}-${curMonth}`, items: tmpData});
+
+        if (i >= 0) {
+          calendarNextData.push({date: `${curYear}-${curMonth}`, items: tmpData});
+        } else {
+          calendarPrevData.push({date: `${curYear}-${curMonth}`, items: tmpData});
+        }
       }
     }
 
-    setCalendar(tmpCalendarData);
+    setCalendar([...calendarNextData, ...calendarPrevData]);
   }
 
   function handleCalendarIndex(index: number) {
-    if (currentIndex < index) {
-      setCurrentDate(currentDate.add(+1, 'month'));
-    } else {
-      setCurrentDate(currentDate.add(-1, 'month'));
-    }
-
-    console.log({index});
+    const {date} = calendar[index];
+    setCurrentDate(dayjs(date + '-1'));
   }
 
   return (
@@ -63,23 +61,8 @@ function Calendar() {
           {currentDate.year()}년 {currentDate.month() + 1}월
         </Typography>
       </View>
-      {!!calendar.length && (
-        <Swiper
-          style={calendarStyles.calendarContentsContainer}
-          index={50}
-          showsPagination={false}
-          horizontal={false}
-          onIndexChanged={handleCalendarIndex}
-          loop={false}>
-          {calendar.map(({date, items}) => {
-            return (
-              <View style={calendarStyles.calendarContents} key={`calendar-content-${date}`}>
-                <Text>{date}</Text>
-              </View>
-            );
-          })}
-        </Swiper>
-      )}
+      <CalendarWeek />
+      <CalendarContents calendar={calendar} onChangeIndex={handleCalendarIndex} />
     </View>
   );
 }

@@ -30,4 +30,19 @@ export const calendarStyles = StyleSheet.create({
     backgroundColor: 'gold',
     flex: 1,
   },
+  calendarRow: {
+    ...commonStyles.flex,
+    flexDirection: 'row',
+    height: 'auto',
+    justifyContent: 'space-between',
+  },
+  calendarWeekItem: {
+    ...commonStyles.flexCenter,
+    flex: 1 / 7,
+    height: 50,
+    fontSize: 14,
+  },
+  calendarWeekText: {
+    fontSize: 14,
+  },
 });
