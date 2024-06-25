@@ -11,10 +11,8 @@ function CalendarWeek() {
     <View style={calendarStyles.calendarRow}>
       {weeks.map(week => {
         return (
-          <View style={calendarStyles.calendarWeekItem}>
-            <Typography key={`week-${week}`} style={calendarStyles.calendarWeekText}>
-              {week}
-            </Typography>
+          <View key={`week-${week}`} style={calendarStyles.calendarDateItem}>
+            <Typography style={calendarStyles.calendarDateText}>{week}</Typography>
           </View>
         );
       })}

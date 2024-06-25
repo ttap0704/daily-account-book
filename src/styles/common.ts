@@ -32,6 +32,5 @@ export const commonStyles = StyleSheet.create({
     maxWidth: 1000,
     marginLeft: 'auto',
     marginRight: 'auto',
-    paddingHorizontal: 20,
   },
 });

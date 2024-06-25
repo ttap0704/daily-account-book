@@ -17,17 +17,16 @@ export const calendarStyles = StyleSheet.create({
     flexDirection: 'row',
     height: 60,
     width: '100%',
+    paddingLeft: 16,
   },
   calendarHeaderTitle: {
     fontSize: 16,
     fontWeight: 'bold',
   },
   calendarContentsContainer: {
-    backgroundColor: 'gold',
     width: '100%',
   },
   calendarContents: {
-    backgroundColor: 'gold',
     flex: 1,
   },
   calendarRow: {
@@ -36,13 +35,14 @@ export const calendarStyles = StyleSheet.create({
     height: 'auto',
     justifyContent: 'space-between',
   },
-  calendarWeekItem: {
+  calendarDateItem: {
     ...commonStyles.flexCenter,
+    width: `${100 / 7}%`,
     flex: 1 / 7,
     height: 50,
-    fontSize: 14,
+    fontSize: 18,
   },
-  calendarWeekText: {
-    fontSize: 14,
+  calendarDateText: {
+    fontSize: 18,
   },
 });

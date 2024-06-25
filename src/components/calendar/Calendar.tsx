@@ -32,7 +32,7 @@ function Calendar() {
         const tmpData: number[][] = [];
         while (date <= lastDate) {
           const day = current.date(date - 1).day() as number;
-          if (!tmpData[week]) tmpData[week] = [];
+          if (!tmpData[week]) tmpData[week] = Array.from({length: 7}, () => 0);
           tmpData[week][day] = date;
           date++;
           if (day === 6) week++;
@@ -57,9 +57,7 @@ function Calendar() {
   return (
     <View style={calendarStyles.calendarContainer}>
       <View style={calendarStyles.calendarHeaderContainer}>
-        <Typography>
-          {currentDate.year()}년 {currentDate.month() + 1}월
-        </Typography>
+        <Typography>{currentDate.format('YYYY년 MM월')}</Typography>
       </View>
       <CalendarWeek />
       <CalendarContents calendar={calendar} onChangeIndex={handleCalendarIndex} />
