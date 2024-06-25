@@ -2,6 +2,7 @@ import {calendarStyles} from 'styles/components/calendar.ts';
 import {Text, View} from 'react-native';
 import React from 'react';
 import {CalendarData} from 'types/calendar.ts';
+import CalendarDate from 'components/calendar/CalendarDate.tsx';
 
 interface CalendarViewProps {
   data: CalendarData;
@@ -10,7 +11,11 @@ interface CalendarViewProps {
 function CalendarView({data}: CalendarViewProps) {
   return (
     <View style={calendarStyles.calendarContents}>
-      <Text>{data.date}</Text>
+      {data.items.map((dates, index) => {
+        return (
+          <CalendarDate key={`calendar-row-${data.date}-${index}`} date={data.date} rowIndex={index} items={dates} />
+        );
+      })}
     </View>
   );
 }
