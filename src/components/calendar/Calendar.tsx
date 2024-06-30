@@ -19,7 +19,6 @@ function Calendar() {
   }, []);
 
   async function setCalendarData() {
-    // await AsyncStorage.removeItem(ASYNC_STORAGE_CALENDAR_KEY);
     const storageCalendarData = await AsyncStorage.getItem(ASYNC_STORAGE_CALENDAR_KEY);
 
     if (!!storageCalendarData) {
@@ -43,14 +42,13 @@ function Calendar() {
         }
       }
 
-      await AsyncStorage.setItem(ASYNC_STORAGE_CALENDAR_KEY, JSON.stringify(finalData));
-
       setCalendar(finalData);
+      await AsyncStorage.setItem(ASYNC_STORAGE_CALENDAR_KEY, JSON.stringify(finalData));
     } else {
       const calendarPrevData: CalendarData[] = [];
       const calendarNextData: CalendarData[] = [];
 
-      for (let i = -240; i <= 238; i++) {
+      for (let i = -240; i <= 240; i++) {
         const current = dayjs().month(currentDate.month() + i);
         const date = current.format('YYYY-MM');
         const items = getMonthData(current);
@@ -75,7 +73,7 @@ function Calendar() {
     let week = 0;
     const tmpData: number[][] = [];
     while (date <= lastDate) {
-      const day = current.date(date - 1).day() as number;
+      const day = ((current.date(date - 1).day() as number) + 1) % 7;
       if (!tmpData[week]) tmpData[week] = Array.from({length: 7}, () => 0);
       tmpData[week][day] = date;
       date++;
