@@ -1,4 +1,17 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, TextStyle} from 'react-native';
+import {COLORS} from 'styles/_colors.ts';
+import NamedStyles = StyleSheet.NamedStyles;
+
+export const textStyles = StyleSheet.create({
+  textColorPrimary: {color: COLORS.PRIMARY},
+  textColorSecondary: {color: COLORS.SECONDARY},
+  textColorPurple: {color: COLORS.PURPLE},
+  textColorRed: {color: COLORS.RED},
+  textColorCommon: {color: COLORS.COMMON},
+  textColorBlack600: {color: COLORS.BLACK600},
+  textColorBlack400: {color: COLORS.BLACK400},
+  textColorBlack200: {color: COLORS.BLACK200},
+});
 
 export const commonStyles = StyleSheet.create({
   // flex
@@ -7,6 +20,9 @@ export const commonStyles = StyleSheet.create({
   },
   alignCenter: {
     alignItems: 'center',
+  },
+  alignStart: {
+    alignItems: 'flex-start',
   },
   justifyCenter: {
     justifyContent: 'center',

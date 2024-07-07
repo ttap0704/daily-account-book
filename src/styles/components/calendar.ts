@@ -4,8 +4,7 @@ import {commonStyles} from 'styles/common.ts';
 export const calendarStyles = StyleSheet.create({
   calendarContainer: {
     ...commonStyles.flex,
-    ...commonStyles.justifyBetween,
-    ...commonStyles.alignCenter,
+    ...commonStyles.alignStart,
     ...commonStyles.viewArea,
     flexDirection: 'column',
     width: '100%',
@@ -22,6 +21,24 @@ export const calendarStyles = StyleSheet.create({
   calendarHeaderTitle: {
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  calendarSubTitleContainer: {
+    ...commonStyles.flex,
+    ...commonStyles.justifyBetween,
+    ...commonStyles.alignCenter,
+    flexDirection: 'row',
+    height: 50,
+    width: '100%',
+    paddingHorizontal: 16,
+  },
+  calendarSubTitleContainerRow: {
+    ...commonStyles.flex,
+    flexDirection: 'row',
+    height: 50,
+    gap: 12,
+  },
+  calendarSubTitle: {
+    fontSize: 16,
   },
   calendarContentsContainer: {
     width: '100%',

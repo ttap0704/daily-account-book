@@ -3,20 +3,37 @@ import {calendarStyles} from 'styles/components/calendar.ts';
 import {useEffect, useState} from 'react';
 import dayjs, {Dayjs} from 'dayjs';
 import Typography from 'components/common/Typography.tsx';
-import {CalendarData} from 'types/calendar.ts';
+import {AccountData, AccountMonthData, CalendarData} from 'types/calendar.ts';
 import CalendarContents from 'components/calendar/CalendarContents.tsx';
 import CalendarWeek from 'components/calendar/CalendarWeek.tsx';
-// import AsyncStorage from '@react-native-async-storage/async-storage/lib/typescript/AsyncStorage.native';
 import {ASYNC_STORAGE_CALENDAR_KEY} from 'core/keys.ts';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import CalendarTitle from 'components/calendar/CalendarTitle.tsx';
+import CalendarSubtitle from 'components/calendar/CalendarSubtitle.tsx';
+
+const INITIAL_ACCOUNT_MONTH_DATA: AccountMonthData = {
+  changes: {},
+  total: {plus: 0, minus: 0},
+};
 
 function Calendar() {
   const [currentDate, setCurrentDate] = useState(dayjs());
   const [calendar, setCalendar] = useState<CalendarData[]>([]);
+  const [account, setAccount] = useState<AccountData>({});
 
   useEffect(() => {
     setCalendarData();
   }, []);
+
+  useEffect(() => {
+    if (!!calendar.length && currentDate) {
+      setAccountData();
+    }
+  }, [calendar, currentDate]);
+
+  async function init() {
+    await setCalendarData();
+  }
 
   async function setCalendarData() {
     const storageCalendarData = await AsyncStorage.getItem(ASYNC_STORAGE_CALENDAR_KEY);
@@ -66,6 +83,17 @@ function Calendar() {
     }
   }
 
+  async function setAccountData() {
+    const dateKey = currentDate.format('YYYY-MM');
+
+    const tmpAccount: AccountData = JSON.parse(JSON.stringify(account));
+    if (!account[dateKey]) {
+      tmpAccount[dateKey] = INITIAL_ACCOUNT_MONTH_DATA;
+    }
+
+    setAccount(tmpAccount);
+  }
+
   function getMonthData(current: Dayjs) {
     const lastDate = current.endOf('month').date();
 
@@ -85,16 +113,22 @@ function Calendar() {
 
   function handleCalendarIndex(index: number) {
     const {date} = calendar[index];
-    setCurrentDate(dayjs(date + '-1'));
+    const nextDate = dayjs(date + '-1');
+    setCurrentDate(nextDate);
   }
 
   return (
     <View style={calendarStyles.calendarContainer}>
-      <View style={calendarStyles.calendarHeaderContainer}>
-        <Typography>{currentDate.format('YYYY년 MM월')}</Typography>
-      </View>
+      <CalendarTitle date={currentDate.format('YYYY년 MM월')} />
+      <CalendarSubtitle
+        data={
+          account[currentDate.format('YYYY-MM')]
+            ? account[currentDate.format('YYYY-MM')].total
+            : INITIAL_ACCOUNT_MONTH_DATA.total
+        }
+      />
       <CalendarWeek />
-      <CalendarContents calendar={calendar} onChangeIndex={handleCalendarIndex} />
+      <CalendarContents calendar={calendar} account={account} onChangeIndex={handleCalendarIndex} />
     </View>
   );
 }
