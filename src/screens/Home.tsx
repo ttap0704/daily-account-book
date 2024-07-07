@@ -1,4 +1,3 @@
-import {SafeAreaView, Text, View} from 'react-native';
 import LayoutDefault from 'components/layouts/LayoutDefault.tsx';
 import {RootStackScreenProps} from 'types/navigation.ts';
 import Calendar from 'components/calendar/Calendar.tsx';
