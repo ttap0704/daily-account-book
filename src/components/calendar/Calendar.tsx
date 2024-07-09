@@ -2,7 +2,6 @@ import {View} from 'react-native';
 import {calendarStyles} from 'styles/components/calendar.ts';
 import {useEffect, useState} from 'react';
 import dayjs, {Dayjs} from 'dayjs';
-import Typography from 'components/common/Typography.tsx';
 import {AccountData, AccountMonthData, CalendarData} from 'types/calendar.ts';
 import CalendarContents from 'components/calendar/CalendarContents.tsx';
 import CalendarWeek from 'components/calendar/CalendarWeek.tsx';
