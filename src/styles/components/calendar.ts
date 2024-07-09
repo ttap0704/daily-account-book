@@ -59,6 +59,10 @@ export const calendarStyles = StyleSheet.create({
     height: 50,
     fontSize: 18,
   },
+  calendarSelectedDateItem: {
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    borderRadius: 10,
+  },
   calendarDateText: {
     fontSize: 18,
   },
