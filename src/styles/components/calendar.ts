@@ -5,7 +5,6 @@ export const calendarStyles = StyleSheet.create({
   calendarContainer: {
     ...commonStyles.flex,
     ...commonStyles.alignStart,
-    ...commonStyles.viewArea,
     flexDirection: 'column',
     width: '100%',
     height: '100%',
@@ -16,7 +15,6 @@ export const calendarStyles = StyleSheet.create({
     flexDirection: 'row',
     height: 60,
     width: '100%',
-    paddingLeft: 16,
   },
   calendarHeaderTitle: {
     fontSize: 16,
@@ -29,7 +27,6 @@ export const calendarStyles = StyleSheet.create({
     flexDirection: 'row',
     height: 50,
     width: '100%',
-    paddingHorizontal: 16,
   },
   calendarSubTitleContainerRow: {
     ...commonStyles.flex,

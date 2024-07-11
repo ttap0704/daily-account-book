@@ -26,6 +26,7 @@ function App(): React.JSX.Element {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen {...SCREENS.HOME}></Stack.Screen>
+          <Stack.Screen {...SCREENS.REGISTRATION}></Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

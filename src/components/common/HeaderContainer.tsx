@@ -1,7 +1,8 @@
 import {Button, Text, TouchableOpacity, View} from 'react-native';
 import {headerStyles} from 'styles/components/header.ts';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useNavigation} from '@react-navigation/native';
+import {COLORS} from 'styles/_colors.ts';
 
 interface HeaderContainerProps {
   onPressNavigationButton: () => void;
@@ -15,7 +16,7 @@ function HeaderContainer({onPressNavigationButton}: HeaderContainerProps) {
       <View>
         {navigation.canGoBack() && (
           <TouchableOpacity>
-            <Icon name="chevron-left" size={12} color="#000000" />
+            <Icon name="chevron-left" size={32} color={COLORS.BLACK400} />
           </TouchableOpacity>
         )}
       </View>

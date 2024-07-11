@@ -48,5 +48,7 @@ export const commonStyles = StyleSheet.create({
     maxWidth: 1000,
     marginLeft: 'auto',
     marginRight: 'auto',
+    position: 'relative',
+    paddingHorizontal: 16,
   },
 });
