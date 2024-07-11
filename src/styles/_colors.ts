@@ -7,4 +7,5 @@ export const COLORS = {
   BLACK600: '#222222',
   BLACK400: '#555555',
   BLACK200: '#888888',
+  WHITE: '#fffff',
 };

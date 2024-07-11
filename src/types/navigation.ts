@@ -8,7 +8,11 @@ type SettingsStackParamList = {
   SETTINGS: undefined;
 };
 
-type StackParamList = HomeStackParamList & SettingsStackParamList;
+type RegistrationParamList = {
+  REGISTRATION: undefined;
+};
+
+type StackParamList = HomeStackParamList & SettingsStackParamList & RegistrationParamList;
 
 export type RootStackParamList = {
   [key in keyof StackParamList]: StackParamList[key] extends infer Param
