@@ -13,7 +13,7 @@ interface CalendarDateProps {
   onPressDate: (date: string) => void;
 }
 
-function CalendarDate({date, rowIndex, items, selectedDate, selectedDateHistory, onPressDate}: CalendarDateProps) {
+function CalendarDate({date, rowIndex, items, selectedDate, onPressDate}: CalendarDateProps) {
   return (
     <View style={calendarStyles.calendarRow} key={`calendar-${date}-${rowIndex}`}>
       {items.map((item, index) => {
