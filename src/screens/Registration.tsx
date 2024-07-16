@@ -1,12 +1,11 @@
-import {Text} from 'react-native';
 import LayoutDefault from 'components/layouts/LayoutDefault.tsx';
 import {RootStackScreenProps} from 'types/navigation.ts';
-import FloatingButton from 'components/buttons/FloatingButton.tsx';
+import RegistrationForm from 'components/registration/RegistrationForm.tsx';
 
 function Registration({navigation}: RootStackScreenProps<'REGISTRATION'>) {
   return (
     <LayoutDefault navigation={navigation}>
-      <Text>Registration</Text>
+      <RegistrationForm />
     </LayoutDefault>
   );
 }
