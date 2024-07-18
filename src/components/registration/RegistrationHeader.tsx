@@ -10,14 +10,18 @@ import SmallTabs from 'components/common/SmallTabs.tsx';
 import {ACCOUNT_TAB_OPTIONS} from 'core/common.ts';
 import {COLORS} from 'styles/_colors.ts';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import useRegistrationStore from 'store/registration.ts';
+import {AccountType} from 'types/common.ts';
 
 function RegistrationHeader() {
+  const {accountType, setAccountType} = useRegistrationStore();
   const {selectedDate} = useCalendarStore();
   const {i18n} = useTranslation();
   const day = dayjs(selectedDate).day();
-  const weekDay = i18n.t('fullWeek').split(',')[day];
+  const weekDayArr = i18n.t('fullWeek').split(',');
 
   const [date, setDate] = useState(selectedDate);
+  const [weekDay, setWeekDay] = useState(weekDayArr[day]);
   const [open, setOpen] = useState(false);
 
   function openDatePicker() {
@@ -29,14 +33,19 @@ function RegistrationHeader() {
   }
 
   function handleSelectedDate(date: Date) {
-    const currentDate = dayjs(date).format('YYYY-MM-DD');
-    setDate(currentDate);
+    const currentDate = dayjs(date);
+    setWeekDay(weekDayArr[currentDate.day()]);
+    setDate(currentDate.format('YYYY-MM-DD'));
     closeDatePicker();
+  }
+
+  function handleAccountType(id: string) {
+    setAccountType(id as AccountType);
   }
 
   return (
     <View style={registrationStyles.registrationFormHeader}>
-      <SmallTabs options={ACCOUNT_TAB_OPTIONS} />
+      <SmallTabs options={ACCOUNT_TAB_OPTIONS} defaultId={accountType} onChange={handleAccountType} />
       <TouchableOpacity onPress={openDatePicker} style={registrationStyles.registrationFormHeaderDateButton}>
         <Typography style={registrationStyles.registrationFormHeaderDate}>
           {date} {weekDay}

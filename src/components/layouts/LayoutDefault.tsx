@@ -14,7 +14,9 @@ interface LayoutDefaultProps {
 function LayoutDefault({children, navigation}: LayoutDefaultProps) {
   return (
     <FullScreenView>
-      <HeaderContainer onPressNavigationButton={() => navigation.push('HOME')}></HeaderContainer>
+      <HeaderContainer
+        onPressNavigationButton={() => navigation.push('HOME')}
+        onPressBackButton={() => navigation.goBack()}></HeaderContainer>
       <View style={[layoutStyles.layoutContainer]}>{children}</View>
     </FullScreenView>
   );

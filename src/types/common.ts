@@ -5,3 +5,13 @@ export type TabItem = {
   id: string;
   backgroundColor: keyof typeof COLORS;
 };
+
+export enum AccountType {
+  EXPENDITURE = 'EXPENDITURE',
+  INCOME = 'INCOME',
+}
+
+export enum Language {
+  KO = 'ko',
+  EN = 'en',
+}

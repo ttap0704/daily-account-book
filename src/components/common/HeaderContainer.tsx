@@ -6,16 +6,17 @@ import {COLORS} from 'styles/_colors.ts';
 
 interface HeaderContainerProps {
   onPressNavigationButton: () => void;
+  onPressBackButton: () => void;
 }
 
-function HeaderContainer({onPressNavigationButton}: HeaderContainerProps) {
+function HeaderContainer({onPressNavigationButton, onPressBackButton}: HeaderContainerProps) {
   const navigation = useNavigation();
 
   return (
     <View style={headerStyles.headerContainer}>
       <View>
         {navigation.canGoBack() && (
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => onPressBackButton()}>
             <Icon name="chevron-left" size={32} color={COLORS.BLACK400} />
           </TouchableOpacity>
         )}

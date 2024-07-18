@@ -6,6 +6,7 @@ export interface AccountDateData {
   change: number;
   categoryName: string;
   categoryId: string;
+  accountType: string;
   changeCount?: number;
 }
 
