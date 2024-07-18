@@ -1,21 +1,21 @@
 import {create} from 'zustand';
+import {Language} from 'types/common.ts';
 
 interface CommonStoreState {
-  lng: string;
+  lng: Language;
 }
 
 interface CommonStoreActions {
-  setLanguage: (lng: string) => void;
+  setLanguage: (lng: Language) => void;
 }
 
 const initialData: CommonStoreState = {
-  lng: '',
+  lng: Language.KO,
 };
 
 const useCommonStore = create<CommonStoreState & CommonStoreActions>(set => ({
   ...initialData,
-
-  setLanguage: (lng: string) => set(state => ({...state, lng})),
+  setLanguage: (lng: Language) => set(state => ({...state, lng})),
 }));
 
 export default useCommonStore;

@@ -26,4 +26,15 @@ export const registrationStyles = StyleSheet.create({
     fontSize: 18,
     color: COLORS.BLACK400,
   },
+  registrationFormAmountContainer: {
+    ...commonStyles.flexCenter,
+    flexDirection: 'row',
+    paddingVertical: 12,
+  },
+  registrationFormAmountInput: {
+    display: 'flex',
+  },
+  registrationFormAmountText: {
+    fontSize: 32,
+  },
 });

@@ -7,13 +7,16 @@ import {COLORS} from 'styles/_colors.ts';
 
 interface SmallTabsProps {
   options: TabItem[];
+  defaultId: string;
+  onChange: (id: string) => void;
 }
 
-function SmallTabs({options}: SmallTabsProps) {
-  const [selected, setSelected] = useState(options[0].id);
+function SmallTabs({options, defaultId, onChange}: SmallTabsProps) {
+  const [selected, setSelected] = useState(defaultId);
 
   function handleSelected(id: string) {
     setSelected(id);
+    onChange(id);
   }
 
   return (
