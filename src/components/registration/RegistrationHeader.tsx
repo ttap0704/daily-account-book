@@ -14,7 +14,7 @@ import useRegistrationStore from 'store/registration.ts';
 import {AccountType} from 'types/common.ts';
 
 function RegistrationHeader() {
-  const {accountType, setAccountType} = useRegistrationStore();
+  const {accountType, setAccountType, setCategory} = useRegistrationStore();
   const {selectedDate} = useCalendarStore();
   const {i18n} = useTranslation();
   const day = dayjs(selectedDate).day();
@@ -41,6 +41,7 @@ function RegistrationHeader() {
 
   function handleAccountType(id: string) {
     setAccountType(id as AccountType);
+    setCategory('');
   }
 
   return (
