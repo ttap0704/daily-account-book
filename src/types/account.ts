@@ -1,0 +1,28 @@
+export interface AccountCategory {
+  name: string;
+}
+
+export enum ExpenditureCategory {
+  FOOD = 'FOOD',
+  TRANSPORTATION = 'TRANSPORTATION',
+  CAR = 'CAR',
+  UTILITY = 'UTILITY',
+  CULTURAL = 'CULTURAL',
+  BEAUTY = 'BEAUTY',
+  DAILY = 'DAILY',
+  COMMUNICATION = 'COMMUNICATION',
+  EXERCISE = 'EXERCISE',
+  DRINK = 'DRINK',
+  SUBSCRIPTION = 'SUBSCRIPTION',
+  TRAVEL = 'TRAVEL',
+  PARENTING = 'PARENTING',
+}
+
+export enum IncomeCategory {
+  SALARY = 'SALARY',
+  EXTRA = 'EXTRA',
+  ALLOWANCE = 'ALLOWANCE',
+  PERFORMANCE = 'PERFORMANCE',
+  INVESTMENT = 'INVESTMENT',
+  DIVIDEND = 'DIVIDEND',
+}

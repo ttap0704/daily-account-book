@@ -10,7 +10,7 @@ interface CommonStoreActions {
 }
 
 const initialData: CommonStoreState = {
-  lng: Language.KO,
+  lng: Language.EN,
 };
 
 const useCommonStore = create<CommonStoreState & CommonStoreActions>(set => ({

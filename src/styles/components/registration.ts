@@ -37,4 +37,25 @@ export const registrationStyles = StyleSheet.create({
   registrationFormAmountText: {
     fontSize: 32,
   },
+  registrationFormCategoryContainer: {
+    ...commonStyles.flex,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    width: '100%',
+    height: 'auto',
+  },
+  registrationFormCategory: {
+    ...commonStyles.flexCenter,
+    flexDirection: 'row',
+    width: '25%',
+    padding: 12,
+  },
+  registrationFormActiveCategory: {
+    backgroundColor: 'rgba(0,0,0,0.2)',
+    borderRadius: 10,
+  },
+  registrationFormCategoryText: {
+    fontSize: 16,
+    textAlign: 'center',
+  },
 });
